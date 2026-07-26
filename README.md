@@ -81,6 +81,10 @@ npm install
 npm run dev
 ```
 
+The maintained host-capture fork workflow, validation gates, packaging, and
+installation acceptance are documented in
+[HOST_CAPTURE_MAINTENANCE.md](HOST_CAPTURE_MAINTENANCE.md).
+
 ## License
 
 This project is licensed under the [GNU Affero General Public License v3.0](LICENSE).

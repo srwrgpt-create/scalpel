@@ -13,6 +13,14 @@ export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin()],
     resolve: { alias: resolveAlias },
+    build: {
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'src/main/index.ts'),
+          'capture-host-probe': resolve(__dirname, 'src/main/capture-host-probe.ts'),
+        },
+      },
+    },
   },
   preload: {
     plugins: [externalizeDepsPlugin()],
@@ -37,6 +45,7 @@ export default defineConfig({
           pinnedZone: resolve(__dirname, 'src/renderer/pinned-zone.html'),
           pluginOverlay: resolve(__dirname, 'src/renderer/plugin-overlay.html'),
           pluginAnnotationOverlay: resolve(__dirname, 'src/renderer/plugin-annotation-overlay.html'),
+          captureBroker: resolve(__dirname, 'src/renderer/capture-broker.html'),
         },
       },
     },

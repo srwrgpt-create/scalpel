@@ -33,6 +33,29 @@ beforeEach(() => {
     pluginUnregisterHotkey: vi.fn(async () => undefined),
     pluginRegisterTab: vi.fn(async () => undefined),
     pluginUnregisterTab: vi.fn(async () => undefined),
+    pluginCaptureGameWindow: vi.fn(async () => null),
+    pluginCaptureGameWindowStreamFrame: vi.fn(async () => ({
+      capture: null,
+      status: {
+        backend: 'isolated-session-stream',
+        state: 'idle',
+        sessionGeneration: 0,
+        recoveryCount: 0,
+        consecutiveOpenFailures: 0,
+        breakerOpen: false,
+        retryAfterMs: 0,
+      },
+    })),
+    pluginResetGameWindowCaptureStream: vi.fn(async () => ({
+      backend: 'isolated-session-stream',
+      state: 'idle',
+      sessionGeneration: 0,
+      recoveryCount: 0,
+      consecutiveOpenFailures: 0,
+      breakerOpen: false,
+      retryAfterMs: 0,
+    })),
+    pluginReleaseGameWindowCaptureStream: vi.fn(async () => undefined),
     pluginTriggerMainHotkey: vi.fn(async () => null),
     onPluginMacro: vi.fn((h: (action: string) => void) => {
       pluginMacroListener = h
